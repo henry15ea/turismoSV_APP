@@ -15,6 +15,7 @@ class cls_routesApi{
     public init(){
         
         routesApi["login"] = (hostApi+"/public/longin");
+        routesApi["registro"] = (hostApi+"/public/newuser");
         //rutas de peticion de datos
         routesApi["categorias"] = (hostApi+"/public/categorias");
         routesApi["ultimosPaquetes"] = (hostApi+"/public/paquetesDisponibles");

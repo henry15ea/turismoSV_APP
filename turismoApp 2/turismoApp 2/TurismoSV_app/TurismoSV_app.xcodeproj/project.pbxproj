@@ -49,6 +49,8 @@
 		52CF55D82A30FB3F0025EB22 /* HistorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF55D72A30FB3F0025EB22 /* HistorialViewController.swift */; };
 		52CF55DE2A30FCDB0025EB22 /* historialResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF55DD2A30FCDB0025EB22 /* historialResponseModel.swift */; };
 		52CF55E02A30FDF40025EB22 /* historialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF55DF2A30FDF40025EB22 /* historialController.swift */; };
+		52DAABC02A343E4800702357 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAABBF2A343E4800702357 /* RegistroViewController.swift */; };
+		52DAABC22A343E8B00702357 /* RegistroCotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAABC12A343E8B00702357 /* RegistroCotroller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,8 @@
 		52CF55D72A30FB3F0025EB22 /* HistorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorialViewController.swift; sourceTree = "<group>"; };
 		52CF55DD2A30FCDB0025EB22 /* historialResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historialResponseModel.swift; sourceTree = "<group>"; };
 		52CF55DF2A30FDF40025EB22 /* historialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historialController.swift; sourceTree = "<group>"; };
+		52DAABBF2A343E4800702357 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
+		52DAABC12A343E8B00702357 /* RegistroCotroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroCotroller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 				43D2E85A2A33E19D00ED39B7 /* FpagoController.swift */,
 				437EF6C12A340D4000D96363 /* FacturaHeaderController.swift */,
 				437EF6C72A34219C00D96363 /* FacturaDetalleController.swift */,
+				52DAABC12A343E8B00702357 /* RegistroCotroller.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 				529798D12A32284A0000AAE0 /* DetalleViewController.swift */,
 				431937DC2A3292C200481098 /* CompraReservaViewController.swift */,
 				43D2E8582A33DCBD00ED39B7 /* PagoViewController.swift */,
+				52DAABBF2A343E4800702357 /* RegistroViewController.swift */,
 			);
 			path = TurismoSV_app;
 			sourceTree = "<group>";
@@ -320,12 +326,14 @@
 				43D2E85B2A33E19D00ED39B7 /* FpagoController.swift in Sources */,
 				43D1AD172A2A9E8100C88E13 /* CategoriasTableViewCell.swift in Sources */,
 				437EF6BE2A340BB200D96363 /* facturaEncabezadoModel.swift in Sources */,
+				52DAABC02A343E4800702357 /* RegistroViewController.swift in Sources */,
 				43F868AF2A2983FD000A7B43 /* SharedPreferences.swift in Sources */,
 				43C7EC182A2ED80800778E66 /* PkgByCategoriaModel.swift in Sources */,
 				436088AD2A2556BD005D22FA /* LoginController.swift in Sources */,
 				437EF6C02A340CC500D96363 /* facturaHeaderResponseMondel.swift in Sources */,
 				52CF55DE2A30FCDB0025EB22 /* historialResponseModel.swift in Sources */,
 				43853F4B2A2D77F500FCFFB4 /* ultimosPkgResponseModel.swift in Sources */,
+				52DAABC22A343E8B00702357 /* RegistroCotroller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
