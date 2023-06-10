@@ -10,14 +10,14 @@ import Foundation
 
 class invitadosModel{
     
-    struct invitadoDetalle {
-        let nombre:String?
-        let apeliido:String?
-        let n_doc:String
-        let edad:String?
-        let iddetalle:String?
-        let username:String?
-        let id_paquete:String?
+    struct invitadoDetalle: Codable {
+        var nombre: String
+        var apellido: String
+        var n_doc: String
+        var edad: Int
+        var iddetalle: String
+        var username: String
+        var id_paquete: String
     }
     
 }

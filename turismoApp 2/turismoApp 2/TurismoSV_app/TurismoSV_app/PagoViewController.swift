@@ -14,6 +14,8 @@ class PagoViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     let idPacketeSelected = SharedPreferences.fn_GetData(key: "PkgSelected");
     var SelectedDateVenc:String = "";
     var invitadoInfo = [invitadosModel.invitadoDetalle]();//esta variable recive la lista de invitados
+    var listaDeInvitados: [invitadosModel.invitadoDetalle] = []
+    
     var idFpagoSelected:String = "null";
     var StateEmited:Bool = false;
     var PrecioPaquete:Double = 0.00;
@@ -31,10 +33,13 @@ class PagoViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     
     let facturaHController = FacturaHeaderController();
     let facturaDController = FacturaDetalleController();
+    let facturaIController = invitadosRegistroController();
     var dataFacturaH = facturaHeaderResponseMondel.DataloginResponse.init(token_paquete: nil, infoMsg: nil, serverApiStatus: nil);
     
     //variables componentes
     let dateFormatter = DateFormatter();
+    
+    let alerta = Alert();
     
     //binging a la vista
     
@@ -136,6 +141,7 @@ class PagoViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         dateFormatter.dateFormat = "dd/MM/yyyy"
         let formattedDate = dateFormatter.string(from: selectedDate)
        
+        //[TurismoSV_app.invitadosModel.invitadoDetalle(nombre: "DINORA", apellido: "RIVAS", n_doc: "4687954687", edad: 26, iddetalle: "37aefd91a3d762f8a4dc21dcaccdb8fb", username: "and123", id_paquete: "6C91DE5FA6DF5DAA7D4F9D8E7AFC3496")]
         
         self.SelectedDateVenc = formattedDate.trimmingCharacters(in: .whitespacesAndNewlines);
         //print("Fecha seleccionada: \(self.SelectedDateVenc)")
@@ -264,6 +270,18 @@ class PagoViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         
         return resp;
     }
+    private func fn_UpdateInvitadoData(ptokenDetalle:String){
+        var contador = 1;
+        
+        for i in 0..<self.invitadoInfo.count {
+            self.invitadoInfo[i].iddetalle = ptokenDetalle;
+            
+            self.listaDeInvitados.append(self.invitadoInfo[i]);
+            contador = contador + 1;
+        }
+        
+        print(self.invitadoInfo);
+    }
     
     private func fn_DetailRegister(ptokenHeader:String){
         //obteniendo datos de los controles
@@ -297,6 +315,34 @@ class PagoViewController: UIViewController, UIPickerViewDataSource, UIPickerView
                         print(dataRs.infoMsg!);
                         print(dataRs.serverApiStatus!);
                         print("token Detallle : \(dataRs.token_paquete!)");
+                        
+                        
+                        if(self.invitadoInfo.count > 0){
+                            //registra a los invitados
+                            print("Registrando invitados -----")
+                            self.fn_InvitadosRegister(ptokenDetalle: self.tokenFacturaDetalle);
+                            
+                
+                            
+                        }else{
+                            //solo se crea el detalle
+                            let alertController = self.alerta.ShowAlert(ptitle: "Proceso completado", pmessage: "Se completo la accion");
+                            let okAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+                                // Manejar el botón OK presionado aquí
+                                
+                            }
+                            
+                            let cancelAction = UIAlertAction(title: "Cancelar", style: .default) { (action:UIAlertAction!) in
+                                // Manejar el botón OK presionado aquí
+                            }
+                            
+                            alertController.addAction(okAction)
+                            alertController.addAction(cancelAction)
+                            self.present(alertController, animated: true, completion:nil)
+                            
+                        }
+                        
+                        
                     }
                     
                     
@@ -310,8 +356,58 @@ class PagoViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         
     }//end func
     
-    private func fn_InvitadosRegister(){
+    private func fn_EncodeListInvitados()->String{
+        do{
+            let jsonData = try JSONEncoder().encode(self.invitadoInfo)
+            let jsonString = String(data: jsonData, encoding: .utf8)!
+            return jsonString
+            
+        }catch{
+            return "null"
+            
+        }
+    }
+    
+    private func fn_InvitadosRegister(ptokenDetalle:String){
+        //este metodo ejecuta las acciones a la api para el registro de invitados
+        //modificamos la info de invitados para tener el id detalle
+        let idet = ptokenDetalle;
+        self.fn_UpdateInvitadoData(ptokenDetalle: idet);
+        let dataInvitadoJson = self.fn_EncodeListInvitados();
         
+        //ejecutamos la llamada a la api
+        self.facturaIController.fn_InvitadoRegister(jsonString:dataInvitadoJson ) { success in
+            DispatchQueue.main.async {
+                if success {
+                    // Código que se ejecuta si la llamada a
+                    print(self.dataController.fn_GetApiStatus());
+                    let dataRs = self.facturaIController.fn_getDataResponse();
+                    
+                    print("registro de invitados ")
+                    print(dataRs.infoMsg)
+                    print(dataRs.serverApiStatus)
+                    
+                    let alertController = self.alerta.ShowAlert(ptitle: "Proceso completado", pmessage: "Se completo la accion");
+                    let okAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+                        // Manejar el botón OK presionado aquí
+                        
+                    }
+                    
+                    let cancelAction = UIAlertAction(title: "Cancelar", style: .default) { (action:UIAlertAction!) in
+                        // Manejar el botón OK presionado aquí
+                    }
+                    
+                    alertController.addAction(okAction)
+                    alertController.addAction(cancelAction)
+                    self.present(alertController, animated: true, completion:nil)
+                    
+                } else {
+                    // Código que se ejecuta si la llamada a
+                    print("no se pudo registrar invitados ")
+                    
+                }
+            }
+        }
     }
     
     //funcion de accion de boton compra
@@ -329,8 +425,12 @@ class PagoViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         print("Fecha Vencimiento : \(self.SelectedDateVenc)")
  
         */
+        
         self.fn_CompletedShop();
+        
+        performSegue(withIdentifier: "sg_home", sender: self)
+
         
     }
     
-}
+}//end class
