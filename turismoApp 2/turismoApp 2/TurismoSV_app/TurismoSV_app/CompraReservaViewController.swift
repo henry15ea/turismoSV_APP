@@ -82,7 +82,7 @@ class CompraReservaViewController: UIViewController, UITableViewDataSource, UITa
     // Actualizar la limitación del número de caracteres
     @objc func textFieldDidChange(_ textField: UITextField) {
         guard let text = textField.text else { return }
-        textField.text = String(text.prefix(3))
+        textField.text = String(text.prefix(10))
     }
     //boton para retornar a la pantalla anterior
     
@@ -103,9 +103,9 @@ class CompraReservaViewController: UIViewController, UITableViewDataSource, UITa
         cell.textLabel?.text = data[indexPath.row];
         cell.detailTextLabel?.text = "dem";
         */
-        let dataPerson = "Edad : \(self.invitadoInfo[selectRow].edad!) / Documento : \(self.invitadoInfo[selectRow].n_doc)";
+        let dataPerson = "Edad : \(self.invitadoInfo[selectRow].edad) / Documento : \(self.invitadoInfo[selectRow].n_doc)";
         
-        cell.textLabel?.text = self.invitadoInfo[selectRow].nombre!+" "+self.invitadoInfo[selectRow].apeliido!;
+        cell.textLabel?.text = self.invitadoInfo[selectRow].nombre+" "+self.invitadoInfo[selectRow].apellido;
         
         cell.detailTextLabel?.text = dataPerson;
  
@@ -119,9 +119,9 @@ class CompraReservaViewController: UIViewController, UITableViewDataSource, UITa
         self.btn_removeInvitado.isEnabled = true;
         self.SelectedCell = Int32(selectRow);
         
-        self.txt_nombreinv.text = data.nombre!;
-        self.txt_apellidoInv.text = data.apeliido!;
-        self.txt_edadInv.text = data.edad!;
+        self.txt_nombreinv.text = data.nombre;
+        self.txt_apellidoInv.text = data.apellido;
+        self.txt_edadInv.text = String(data.edad);
         self.txt_ndocInv.text = data.n_doc;
         
         
@@ -166,10 +166,10 @@ class CompraReservaViewController: UIViewController, UITableViewDataSource, UITa
         
         
         self.invitadoInfo.append(invitadosModel.invitadoDetalle(
-            nombre: nmb?.uppercased(),
-            apeliido: apel?.uppercased(),
+            nombre: (nmb?.uppercased())!,
+            apellido: (apel?.uppercased())!,
             n_doc: ndoc!,
-            edad: edy,
+            edad: Int(edy!)!,
             iddetalle: "simple",
             username: uname,
             id_paquete: id_pkg

@@ -20,6 +20,8 @@
 		437EF6C42A3416C700D96363 /* infoPaqueteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437EF6C32A3416C700D96363 /* infoPaqueteModel.swift */; };
 		437EF6C62A341DE200D96363 /* detalleFacturaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437EF6C52A341DE200D96363 /* detalleFacturaModel.swift */; };
 		437EF6C82A34219C00D96363 /* FacturaDetalleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437EF6C72A34219C00D96363 /* FacturaDetalleController.swift */; };
+		437EF6CA2A343E8900D96363 /* invitadosResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437EF6C92A343E8900D96363 /* invitadosResponseModel.swift */; };
+		437EF6CC2A343F2500D96363 /* invitadosRegistroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437EF6CB2A343F2500D96363 /* invitadosRegistroController.swift */; };
 		43853F4B2A2D77F500FCFFB4 /* ultimosPkgResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43853F4A2A2D77F500FCFFB4 /* ultimosPkgResponseModel.swift */; };
 		43853F4D2A2D7AD400FCFFB4 /* ultimosPaquetesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43853F4C2A2D7AD400FCFFB4 /* ultimosPaquetesController.swift */; };
 		43853F4F2A2D82F700FCFFB4 /* cls_ImagenUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43853F4E2A2D82F700FCFFB4 /* cls_ImagenUrl.swift */; };
@@ -65,6 +67,8 @@
 		437EF6C32A3416C700D96363 /* infoPaqueteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoPaqueteModel.swift; sourceTree = "<group>"; };
 		437EF6C52A341DE200D96363 /* detalleFacturaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detalleFacturaModel.swift; sourceTree = "<group>"; };
 		437EF6C72A34219C00D96363 /* FacturaDetalleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacturaDetalleController.swift; sourceTree = "<group>"; };
+		437EF6C92A343E8900D96363 /* invitadosResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = invitadosResponseModel.swift; sourceTree = "<group>"; };
+		437EF6CB2A343F2500D96363 /* invitadosRegistroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = invitadosRegistroController.swift; sourceTree = "<group>"; };
 		43853F4A2A2D77F500FCFFB4 /* ultimosPkgResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ultimosPkgResponseModel.swift; sourceTree = "<group>"; };
 		43853F4C2A2D7AD400FCFFB4 /* ultimosPaquetesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ultimosPaquetesController.swift; sourceTree = "<group>"; };
 		43853F4E2A2D82F700FCFFB4 /* cls_ImagenUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cls_ImagenUrl.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 				43D2E85A2A33E19D00ED39B7 /* FpagoController.swift */,
 				437EF6C12A340D4000D96363 /* FacturaHeaderController.swift */,
 				437EF6C72A34219C00D96363 /* FacturaDetalleController.swift */,
+				437EF6CB2A343F2500D96363 /* invitadosRegistroController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 				52CF55DD2A30FCDB0025EB22 /* historialResponseModel.swift */,
 				43D2E85C2A33E20700ED39B7 /* fpagoResponseModel.swift */,
 				437EF6BF2A340CC500D96363 /* facturaHeaderResponseMondel.swift */,
+				437EF6C92A343E8900D96363 /* invitadosResponseModel.swift */,
 			);
 			path = ApiResponseModel;
 			sourceTree = "<group>";
@@ -299,6 +305,7 @@
 				43E014842A2A63DB0042CAF5 /* CategoriaViewController.swift in Sources */,
 				43FCCB3B2A2518B3003B07D3 /* TurismoSV_app.xcdatamodeld in Sources */,
 				437EF6C82A34219C00D96363 /* FacturaDetalleController.swift in Sources */,
+				437EF6CC2A343F2500D96363 /* invitadosRegistroController.swift in Sources */,
 				43D2E8592A33DCBD00ED39B7 /* PagoViewController.swift in Sources */,
 				437EF6C42A3416C700D96363 /* infoPaqueteModel.swift in Sources */,
 				43C7EC162A2ECA1000778E66 /* PkgByCategoriaViewController.swift in Sources */,
@@ -323,6 +330,7 @@
 				43F868AF2A2983FD000A7B43 /* SharedPreferences.swift in Sources */,
 				43C7EC182A2ED80800778E66 /* PkgByCategoriaModel.swift in Sources */,
 				436088AD2A2556BD005D22FA /* LoginController.swift in Sources */,
+				437EF6CA2A343E8900D96363 /* invitadosResponseModel.swift in Sources */,
 				437EF6C02A340CC500D96363 /* facturaHeaderResponseMondel.swift in Sources */,
 				52CF55DE2A30FCDB0025EB22 /* historialResponseModel.swift in Sources */,
 				43853F4B2A2D77F500FCFFB4 /* ultimosPkgResponseModel.swift in Sources */,

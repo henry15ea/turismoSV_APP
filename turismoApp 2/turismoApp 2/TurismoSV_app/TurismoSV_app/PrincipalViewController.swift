@@ -205,7 +205,7 @@ class PrincipalViewController: UIViewController, UITabBarDelegate, UITableViewDe
 
     
     //acciones de botones
-    @IBAction func btn_cerrarSesion(_ sender: Any) {
+    @IBAction func btn_cerrarsession(_ sender: UIBarButtonItem) {
         do{
             let alertController = self.alerta.ShowAlert(ptitle: "Cerrar sesion", pmessage: "Quiere cerrar la sesion actual?");
             let okAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
@@ -226,6 +226,7 @@ class PrincipalViewController: UIViewController, UITabBarDelegate, UITableViewDe
             print("fallo al tratar de salir de la sesion");
         }
     }
+    
     
     
 

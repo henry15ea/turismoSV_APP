@@ -123,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKW-HF-ION" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="675" y="439.43661971830988"/>
+            <point key="canvasLocation" x="276" y="436"/>
         </scene>
         <!--Pago View Controller-->
         <scene sceneID="rg5-Vp-Mh7">
@@ -222,11 +222,12 @@
                         <outlet property="dtpk_fechaVencTargeta" destination="wHQ-TS-kN3" id="WgA-az-dEM"/>
                         <outlet property="txt_numTargeta" destination="eO1-le-s9r" id="HEJ-br-Qyt"/>
                         <outlet property="txt_secureCodeTargeta" destination="fWs-tm-mhK" id="Vzu-h4-y4M"/>
+                        <segue destination="uQk-dy-vSd" kind="show" identifier="sg_home" id="ys5-mc-M9T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fst-3X-W5G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-776.25" y="1277.1126760563379"/>
+            <point key="canvasLocation" x="-270" y="-388"/>
         </scene>
         <!--Compra Reserva View Controller-->
         <scene sceneID="5rI-d9-1zx">
@@ -623,7 +624,7 @@
                                         <barButtonItem key="rightBarButtonItem" title="Cerrar Session" image="cerrar_sesion" id="dna-ht-bgy">
                                             <color key="tintColor" red="0.55317869737063563" green="0.20353159991382308" blue="0.16963839242832421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
-                                                <action selector="btn_cerrarSesion:" destination="uQk-dy-vSd" id="wlg-we-hrD"/>
+                                                <action selector="btn_cerrarsession:" destination="uQk-dy-vSd" id="bWL-Il-3pv"/>
                                                 <segue destination="BYZ-38-t0r" kind="show" id="MZK-UO-01Z"/>
                                             </connections>
                                         </barButtonItem>
@@ -647,7 +648,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9dA-jt-2oe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2304.375" y="166.90140845070422"/>
+            <point key="canvasLocation" x="996" y="-351"/>
         </scene>
         <!--Categorias-->
         <scene sceneID="0En-4Z-JXX">
@@ -706,7 +707,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxY-MS-bWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1254.375" y="-312.67605633802816"/>
+            <point key="canvasLocation" x="1498" y="402"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="jns-JC-HGQ">
@@ -798,20 +799,6 @@
             </objects>
             <point key="canvasLocation" x="3075" y="-367.6056338028169"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Dwr-m5-Ku9">
-            <objects>
-                <viewController id="nlf-aw-nqg" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8eF-rd-RWB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="dx7-yI-W0Y"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AgT-Cc-TrK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="categorias" width="24" height="24"/>
@@ -823,6 +810,7 @@
         <image name="return" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="JtF-O8-Ysm"/>
         <segue reference="LZL-rn-aSK"/>
         <segue reference="2O8-bO-sO7"/>
     </inferredMetricsTieBreakers>
